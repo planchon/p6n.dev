@@ -1,26 +1,136 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #000000;
+}
+
+@layer base {
+	@font-face {
+		font-family: "Mackinac";
+		src: url("/fonts/mackinac-bold.woff2") format("woff2");
+		font-weight: 800;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: "Mackinac";
+		src: url("/fonts/mackinac-bold-italic.woff2") format("woff2");
+		font-weight: 800;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: "Mackinac";
+		src: url("/fonts/mackinac-medium.woff2") format("woff2");
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: "Mackinac";
+		src: url("/fonts/mackinac-medium-italic.woff2") format("woff2");
+		font-weight: 500;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: "Fragment Mono";
+		src: url("/fonts/fragment-mono-regular.woff2") format("woff2");
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: "Fragment Mono";
+		src: url("/fonts/fragment-mono-italic.woff2") format("woff2");
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: "Fricolage";
+		src: url("/fonts/fricolage-grotesque.woff2") format("woff2");
+		font-weight: 400;
+		font-style: normal;
+	}
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+	--font-mackinac: "Mackinac", sans-serif;
+	--font-fragment-mono: "Fragment Mono", sans-serif;
+	--font-fricolage: "Fricolage", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #000000;
+		--foreground: #ededed;
+	}
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.blur-gradient-bottom {
+	-webkit-backdrop-filter: blur(4px);
+	background: linear-gradient(
+		#fff0 0%,
+		#ffffff1a 20%,
+		#ffffff4d 40%,
+		#ffffff80 60%,
+		#ffffffb3 80%,
+		#fffc 100%
+	);
+	-webkit-mask-image: linear-gradient(
+		#0000 0%,
+		#0006 20%,
+		#0009 40%,
+		#000c 60%,
+		#000000e6 80%,
+		#000 100%
+	);
+	mask-image: linear-gradient(
+		#0000 0%,
+		#0006 20%,
+		#0009 40%,
+		#000c 60%,
+		#000000e6 80%,
+		#000 100%
+	);
+}
+
+.blur-gradient-top {
+	-webkit-backdrop-filter: blur(4px);
+	background: linear-gradient(
+		#fffc 0%,
+		#ffffffb3 20%,
+		#ffffff80 40%,
+		#ffffff4d 60%,
+		#ffffff1a 80%,
+		#fff0 100%
+	);
+	-webkit-mask-image: linear-gradient(
+		#000 0%,
+		#000000e6 20%,
+		#000c 40%,
+		#0009 60%,
+		#0006 80%,
+		#0000 100%
+	);
+	mask-image: linear-gradient(
+		#000 0%,
+		#000000e6 20%,
+		#000c 40%,
+		#0009 60%,
+		#0006 80%,
+		#0000 100%
+	);
 }
