@@ -98,7 +98,8 @@ void main() {
     f -= 0.5 * effect;
   }
   vec3 col = mix(vec3(0.0), waveColor, f);
-  gl_FragColor = vec4(col, 1.0);
+  float alpha = 1.0;
+  gl_FragColor = vec4(col, alpha);
 }
 `;
 
@@ -134,6 +135,17 @@ void mainImage(in vec4 inputColor, in vec2 uv, out vec4 outputColor) {
   vec2 uvPixel = normalizedPixelSize * floor(uv / normalizedPixelSize);
   vec4 color = texture2D(inputBuffer, uvPixel);
   color.rgb = dither(uv, color.rgb);
+  bool invert = false;
+  float threshold = 0.26;
+  if (invert) {
+    threshold = 0.12;
+  }
+  if (color.r < threshold && color.g < threshold && color.b < threshold) {
+    color.a = 0.0;
+  }
+  if (invert) {
+    color.rgb = 1.0 - color.rgb;
+  }
   outputColor = color;
 }
 `;
@@ -145,18 +157,23 @@ class RetroEffectImpl extends Effect {
 			["pixelSize", new THREE.Uniform(2.0)],
 		]);
 		super("RetroEffect", ditherFragmentShader, { uniforms });
+		// @ts-expect-error
 		this.uniforms = uniforms;
 	}
 	set colorNum(v) {
+		// @ts-expect-error
 		this.uniforms.get("colorNum").value = v;
 	}
 	get colorNum() {
+		// @ts-expect-error
 		return this.uniforms.get("colorNum").value;
 	}
 	set pixelSize(v) {
+		// @ts-expect-error
 		this.uniforms.get("pixelSize").value = v;
 	}
 	get pixelSize() {
+		// @ts-expect-error
 		return this.uniforms.get("pixelSize").value;
 	}
 }
@@ -235,6 +252,7 @@ function DitheredWaves({
 			u.waveAmplitude.value = waveAmplitude;
 
 		if (!prevColor.current.every((v, i) => v === waveColor[i])) {
+			// @ts-expect-error
 			u.waveColor.value.set(...waveColor);
 			prevColor.current = [...waveColor];
 		}
@@ -257,6 +275,7 @@ function DitheredWaves({
 		);
 	};
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: is ok
 	useEffect(() => {
 		if (enableMouseInteraction) {
 			window.addEventListener("pointermove", handlePointerMove);

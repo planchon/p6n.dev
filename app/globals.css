@@ -59,6 +59,7 @@
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
+	--fill-text-color: var(--text-color);
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 	--font-mackinac: "Mackinac", sans-serif;
@@ -68,11 +69,19 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background: #000000;
-		--foreground: #ededed;
+		--background: rgb(5, 11, 14);
+		--foreground: hsl(0, 0%, 95%);
+		--text-color: #ededed;
 	}
 }
 
+@media (prefers-color-scheme: light) {
+	:root {
+		--background: #ffffff;
+		--foreground: #000000;
+		--text-color: hsl(0, 0%, 10%);
+	}
+}
 body {
 	background: var(--background);
 	color: var(--foreground);
