@@ -5,7 +5,6 @@ import { HorizontalLine } from "@/components/h-line";
 import { Header } from "@/components/header";
 import { Paris } from "@/components/paris";
 import Dither from "@/components/shaders/wave";
-import { Sia } from "@/components/sia";
 import { Stratumn } from "@/components/stratumn";
 import { VirtualLine } from "@/components/v-line";
 
@@ -45,13 +44,9 @@ export default function Home() {
 								<a href="https://stratumn.com" className="hover:underline">
 									<Stratumn className="inline-block h-[15px] w-auto mb-1 fill-text-color" />
 								</a>{" "}
-								at{" "}
-								<a href="https://sia-partners.com">
-									<Sia className="inline-block h-[15px] w-auto mb-1 fill-text-color" />
-								</a>
-								. i lead the engineering team : we optimize the million LOC
-								codebase, improve the CICD, and maintain all our k8s clusters on
-								AWS.
+								at <a href="https://sia-partners.com">Sia Partners</a>. I lead
+								the engineering team : we optimize the million LOC codebase,
+								improve the CICD, and maintain all our k8s clusters on AWS.
 							</p>
 							<p className="pt-2 text-text-color">
 								i love going hardcore on subjects, obsessing over details and
