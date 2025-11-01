@@ -11,11 +11,11 @@ export const Header = () => {
 						alt="logo"
 						width={54}
 						height={54}
-						className="rounded-full grayscale hover:grayscale-0"
+						className="rounded-full"
 					/>
 					<div className="flex flex-col gap-2">
 						<h1 className="font-mackinac text-xl font-bold text-text-color">
-							p6n.dev
+							paul planchon
 						</h1>
 						<h3 className="font-fragment-mono text-sm font-medium text-text-color">
 							curious engineer
