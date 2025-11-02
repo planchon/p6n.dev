@@ -150,11 +150,13 @@ export default async function Home() {
 						<div className="flex flex-col gap-4 p-4">
 							{database.map(async (post) => (
 								<Blog
+									// @ts-expect-error
 									href={`https://blog.p6n.dev/p/${post.properties.Slug.rich_text[0].plain_text}`}
 									key={post.id}
 									className="flex flex-row items-center justify-between gap-2"
 								>
 									<BlogTitle>
+										{/* @ts-ignore */}
 										{post.properties.Page.title[0].plain_text}
 									</BlogTitle>
 								</Blog>

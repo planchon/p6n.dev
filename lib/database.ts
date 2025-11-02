@@ -1,9 +1,4 @@
-import {
-	Client,
-	type PageObjectResponse,
-	type PartialDataSourceObjectResponse,
-	type PartialPageObjectResponse,
-} from "@notionhq/client";
+import { Client, type PageObjectResponse } from "@notionhq/client";
 
 if (process.env.NOTION_API_TOKEN == null) {
 	throw new Error("NOTION_API_TOKEN is not set");
@@ -18,12 +13,7 @@ const notion = new Client({
  * @param databaseId ID of the collection to query
  * @returns A list of published posts from the collection
  */
-export const getDatabase = async (
-	databaseId: string,
-	{ includeUnpublished }: { includeUnpublished: boolean } = {
-		includeUnpublished: false,
-	},
-) => {
+export const getDatabase = async (databaseId: string) => {
 	let startCursor: string | undefined;
 	const results = [];
 
@@ -39,7 +29,9 @@ export const getDatabase = async (
 	const filteredResults = results.filter(
 		(r) =>
 			r.object === "page" &&
+			// @ts-expect-error
 			r.properties["show p6n"].checkbox &&
+			// @ts-expect-error
 			r.properties.Published.checkbox,
 	);
 
