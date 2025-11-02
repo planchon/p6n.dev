@@ -13,12 +13,12 @@ export const Header = () => {
 						height={54}
 						className="rounded-full"
 					/>
-					<div className="flex flex-col gap-2">
+					<div className="flex flex-col">
 						<h1 className="font-mackinac text-xl font-bold text-text-color">
 							paul planchon
 						</h1>
-						<h3 className="font-fragment-mono text-sm font-medium text-text-color">
-							curious engineer
+						<h3 className="font-fragment-mono text-xs font-medium text-text-color">
+							product minded engineer
 						</h3>
 					</div>
 				</div>
