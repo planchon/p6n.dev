@@ -25,7 +25,7 @@ export const ProjectHeader = ({
 			href={href}
 			className={cn("flex items-center justify-between gap-2", className)}
 		>
-			<Tooltip>
+			<Tooltip delayDuration={400}>
 				<TooltipTrigger asChild>{children}</TooltipTrigger>
 				<TooltipContent>
 					<p>{tooltip}</p>
