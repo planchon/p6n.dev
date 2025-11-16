@@ -1,6 +1,12 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "./ui/global-tooltip";
+
 export const ProjectBody = ({
 	children,
 	className,
@@ -25,12 +31,14 @@ export const ProjectHeader = ({
 			href={href}
 			className={cn("flex items-center justify-between gap-2", className)}
 		>
-			<Tooltip delayDuration={400}>
-				<TooltipTrigger asChild>{children}</TooltipTrigger>
-				<TooltipContent>
-					<p>{tooltip}</p>
-				</TooltipContent>
-			</Tooltip>
+			<TooltipProvider>
+				<Tooltip>
+					<TooltipTrigger asChild>{children}</TooltipTrigger>
+					<TooltipContent>
+						<p>{tooltip}</p>
+					</TooltipContent>
+				</Tooltip>
+			</TooltipProvider>
 			<FaArrowRightLong className="text-text-color md:block hidden" />
 		</a>
 	);
@@ -58,14 +66,29 @@ export const ProjectTechStack = ({
 	children,
 	className,
 }: React.ComponentProps<"div">) => {
+	if (!children || !Array.isArray(children)) return null;
+	const childrenArray = Array.from(children) as React.ReactElement<{
+		title: string;
+	}>[];
+
 	return (
 		<div
 			className={cn(
-				"pl-2 pt-1 flex items-center justify-start gap-2",
+				"pl-2 pt-1 flex items-center justify-start gap-x-2",
 				className,
 			)}
 		>
-			{children}
+			<TooltipProvider>
+				{childrenArray.map((child) => (
+					<Tooltip key={child.props.title}>
+						<TooltipTrigger>{child}</TooltipTrigger>
+						<TooltipContent>
+							{/* @ts-expect-error */}
+							<p>{child.type.name}</p>
+						</TooltipContent>
+					</Tooltip>
+				))}
+			</TooltipProvider>
 		</div>
 	);
 };

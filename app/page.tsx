@@ -132,7 +132,7 @@ export default async function Home() {
 								<ProjectTechStack>
 									<Postgres className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0" />
 									<Postgraphile className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0" />
-									<Node className="inline-block w-8 h-8 m-1 grayscale hover:grayscale-0" />
+									<Node className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0" />
 								</ProjectTechStack>
 							</ProjectBody>
 							<ProjectBody className="pt-4">
@@ -151,7 +151,7 @@ export default async function Home() {
 								</ProjectDescription>
 								<ProjectTechStack>
 									<Gitlab className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
-									<Docker className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0" />
+									<Docker className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
 									<Helm className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
 								</ProjectTechStack>
 							</ProjectBody>
@@ -175,7 +175,7 @@ export default async function Home() {
 								</ProjectDescription>
 								<ProjectTechStack>
 									<Go className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
-									<Temporal className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0" />
+									<Temporal className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
 									<Clickhouse className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
 								</ProjectTechStack>
 							</ProjectBody>
