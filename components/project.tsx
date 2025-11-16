@@ -33,6 +33,7 @@ export const ProjectHeader = ({
 		>
 			<TooltipProvider>
 				<Tooltip>
+					{/* @ts-expect-error */}
 					<TooltipTrigger asChild>{children}</TooltipTrigger>
 					<TooltipContent>
 						<p>{tooltip}</p>
