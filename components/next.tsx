@@ -1,4 +1,10 @@
-export const Next = ({ className }: { className?: string }) => {
+export const Next = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="25"

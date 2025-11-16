@@ -1,4 +1,10 @@
-export const Node = ({ className }: { className?: string }) => {
+export const Node = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="442.37"

@@ -84,8 +84,7 @@ export const ProjectTechStack = ({
 					<Tooltip key={child.props.title}>
 						<TooltipTrigger>{child}</TooltipTrigger>
 						<TooltipContent>
-							{/* @ts-expect-error */}
-							<p>{child.type.name}</p>
+							<p>{child.props.title}</p>
 						</TooltipContent>
 					</Tooltip>
 				))}

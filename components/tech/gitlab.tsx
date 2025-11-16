@@ -1,4 +1,10 @@
-export const Gitlab = ({ className }: { className?: string }) => {
+export const Gitlab = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="156"

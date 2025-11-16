@@ -1,4 +1,10 @@
-export const Convex = ({ className }: { className?: string }) => {
+export const Convex = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="26"

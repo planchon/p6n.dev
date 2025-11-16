@@ -1,4 +1,10 @@
-export const OpenRouter = ({ className }: { className?: string }) => {
+export const OpenRouter = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="24"

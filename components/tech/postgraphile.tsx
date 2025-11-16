@@ -1,4 +1,10 @@
-export const Postgraphile = ({ className }: { className?: string }) => {
+export const Postgraphile = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="337"

@@ -1,4 +1,10 @@
-export const Docker = ({ className }: { className?: string }) => {
+export const Docker = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="800px"

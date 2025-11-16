@@ -1,4 +1,10 @@
-export const Clickhouse = ({ className }: { className?: string }) => {
+export const Clickhouse = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="2500"

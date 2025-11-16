@@ -1,4 +1,10 @@
-export const Go = ({ className }: { className?: string }) => {
+export const Go = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="206"
@@ -8,7 +14,7 @@ export const Go = ({ className }: { className?: string }) => {
 			xmlns="http://www.w3.org/2000/svg"
 			className={className}
 		>
-			<title>Go</title>
+			<title>{title}</title>
 			<path
 				d="M15.5 23.2343C15.1 23.2343 15 23.0343 15.2 22.7343L17.3 20.0343C17.5 19.7343 18 19.5343 18.4 19.5343H54.1C54.5 19.5343 54.6 19.8343 54.4 20.1343L52.7 22.7343C52.5 23.0343 52 23.3343 51.7 23.3343L15.5 23.2343Z"
 				fill="#00ACD7"

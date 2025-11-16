@@ -1,4 +1,10 @@
-export const Postgres = ({ className }: { className?: string }) => {
+export const Postgres = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="432.071pt"

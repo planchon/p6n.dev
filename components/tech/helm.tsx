@@ -1,4 +1,10 @@
-export const Helm = ({ className }: { className?: string }) => {
+export const Helm = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="673"

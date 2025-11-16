@@ -130,9 +130,18 @@ export default async function Home() {
 									redesign of the RLS authorization layer.
 								</ProjectDescription>
 								<ProjectTechStack>
-									<Postgres className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0" />
-									<Postgraphile className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0" />
-									<Node className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0" />
+									<Postgres
+										title="Postgres"
+										className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0"
+									/>
+									<Postgraphile
+										title="Postgraphile"
+										className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0"
+									/>
+									<Node
+										title="Node"
+										className="inline-block w-7 h-7 m-1 grayscale hover:grayscale-0"
+									/>
 								</ProjectTechStack>
 							</ProjectBody>
 							<ProjectBody className="pt-4">
@@ -150,9 +159,18 @@ export default async function Home() {
 									the runners. Adoption of GitOps in CD (using helm).
 								</ProjectDescription>
 								<ProjectTechStack>
-									<Gitlab className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
-									<Docker className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
-									<Helm className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
+									<Gitlab
+										title="Gitlab"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+									<Docker
+										title="Docker"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+									<Helm
+										title="Helm"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
 								</ProjectTechStack>
 							</ProjectBody>
 							<div className="flex items-center justify-between gap-2 pt-6">
@@ -174,9 +192,18 @@ export default async function Home() {
 									experience, but on your own infrastructure.
 								</ProjectDescription>
 								<ProjectTechStack>
-									<Go className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
-									<Temporal className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
-									<Clickhouse className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
+									<Go
+										title="Go"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+									<Temporal
+										title="Temporal"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+									<Clickhouse
+										title="Clickhouse"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
 								</ProjectTechStack>
 							</ProjectBody>
 							<div className="flex items-center justify-between gap-2 pt-6">
@@ -197,9 +224,18 @@ export default async function Home() {
 									I built my own using Convex, Next.js and OpenRouter.
 								</ProjectDescription>
 								<ProjectTechStack>
-									<Convex className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0" />
-									<OpenRouter className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0" />
-									<Next className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0" />
+									<Convex
+										title="Convex"
+										className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0"
+									/>
+									<OpenRouter
+										title="OpenRouter"
+										className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0"
+									/>
+									<Next
+										title="Next"
+										className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0"
+									/>
 								</ProjectTechStack>
 							</ProjectBody>
 						</div>

@@ -1,4 +1,10 @@
-export const Temporal = ({ className }: { className?: string }) => {
+export const Temporal = ({
+	title,
+	className,
+}: {
+	title: string;
+	className?: string;
+}) => {
 	return (
 		<svg
 			width="386"
