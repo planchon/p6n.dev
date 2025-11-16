@@ -1,7 +1,7 @@
 export const Stratumn = ({ className }: { className?: string }) => {
 	return (
 		<svg
-			width="134"
+			width="142"
 			height="24"
 			viewBox="0 0 134 24"
 			xmlns="http://www.w3.org/2000/svg"

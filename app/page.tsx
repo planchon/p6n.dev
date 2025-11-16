@@ -1,9 +1,16 @@
 import { GiWaveSurfer } from "react-icons/gi";
 import { Biarritz } from "@/components/biarritz";
 import { Blog, BlogTitle } from "@/components/blog";
+import { Brume } from "@/components/brume";
+import { Clickhouse } from "@/components/clickhouse";
+import { Convex } from "@/components/convex";
 import { Glenans } from "@/components/glenans";
+import { Go } from "@/components/go";
 import { HorizontalLine } from "@/components/h-line";
 import { Header } from "@/components/header";
+import { Karnet } from "@/components/karnet";
+import { Next } from "@/components/next";
+import { OpenRouter } from "@/components/open-router";
 import { Paris } from "@/components/paris";
 import {
 	ProjectBody,
@@ -20,6 +27,7 @@ import { Helm } from "@/components/tech/helm";
 import { Node } from "@/components/tech/node";
 import { Postgraphile } from "@/components/tech/postgraphile";
 import { Postgres } from "@/components/tech/postgres";
+import { Temporal } from "@/components/temporal";
 import { VirtualLine } from "@/components/v-line";
 import { getDatabase } from "@/lib/database";
 
@@ -99,7 +107,7 @@ export default async function Home() {
 							className="h-full w-full p-4"
 						/>
 						<HorizontalLine className="relative" />
-						<h2 className="w-full py-2 px-4 font-mackinac text-lg text-text-color">
+						<h2 className="w-full py-2 px-4 font-mackinac text-lg text-text-color select-none">
 							Projects
 						</h2>
 						<HorizontalLine className="relative" />
@@ -108,7 +116,10 @@ export default async function Home() {
 								<Stratumn className="inline-block h-[15px] w-auto mb-1 fill-text-color" />
 							</div>
 							<ProjectBody>
-								<ProjectHeader href="https://stratumn.com">
+								<ProjectHeader
+									href="https://blog.p6n.dev/p/the-journey-from-request-timing-out-to-taking-250-ms"
+									tooltip="Read my blog post about it"
+								>
 									<ProjectHeaderText>
 										100x performance gain on core requests
 									</ProjectHeaderText>
@@ -125,7 +136,10 @@ export default async function Home() {
 								</ProjectTechStack>
 							</ProjectBody>
 							<ProjectBody className="pt-4">
-								<ProjectHeader href="https://stratumn.com">
+								<ProjectHeader
+									href="https://stratumn.com"
+									tooltip="Read my blog post about it"
+								>
 									<ProjectHeaderText>
 										Reduce CI/CD time by 80%
 									</ProjectHeaderText>
@@ -141,9 +155,56 @@ export default async function Home() {
 									<Helm className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
 								</ProjectTechStack>
 							</ProjectBody>
+							<div className="flex items-center justify-between gap-2 pt-6">
+								<Brume />
+							</div>
+							<ProjectBody className="pt-3">
+								<ProjectHeader
+									href="https://github.com/brumecloud/brume"
+									tooltip="Go to the repository"
+								>
+									<ProjectHeaderText>
+										No-code open source devops platform
+									</ProjectHeaderText>
+								</ProjectHeader>
+								<ProjectDescription>
+									Brume is a fully automated devops platform allowing you to
+									deploy your applications to any cloud provider following the
+									best practices without any hassle. Vercel or Railway
+									experience, but on your own infrastructure.
+								</ProjectDescription>
+								<ProjectTechStack>
+									<Go className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
+									<Temporal className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0" />
+									<Clickhouse className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0" />
+								</ProjectTechStack>
+							</ProjectBody>
+							<div className="flex items-center justify-between gap-2 pt-6">
+								<Karnet className="inline-block h-[17px] w-auto fill-text-color" />
+							</div>
+							<ProjectBody className="pt-3">
+								<ProjectHeader
+									href="https://github.com/planchon/karnet"
+									tooltip="Go to the repository"
+								>
+									<ProjectHeaderText>
+										Superfast, multi-model/modal LLM chat
+									</ProjectHeaderText>
+								</ProjectHeader>
+								<ProjectDescription className="mb-1">
+									I was tired of the shitty UI/UX of the major LLM providers. I
+									was missing a great keyboard only chat, fast and smooth ui. So
+									I built my own using Convex, Next.js and OpenRouter.
+								</ProjectDescription>
+								<ProjectTechStack>
+									<Convex className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0" />
+									<OpenRouter className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0" />
+									<Next className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0" />
+								</ProjectTechStack>
+							</ProjectBody>
 						</div>
 						<HorizontalLine className="relative" />
-						<h2 className="w-full py-2 px-4 font-mackinac text-lg text-text-color">
+						<h2 className="w-full py-2 px-4 font-mackinac text-lg text-text-color select-none">
 							Blog
 						</h2>
 						<HorizontalLine className="relative" />

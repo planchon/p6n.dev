@@ -5,7 +5,7 @@ export const Header = () => {
 	return (
 		<div className="relative">
 			<div className="flex md:flex-row flex-col items-center p-4 justify-between">
-				<div className="w-full flex items-center gap-4">
+				<div className="w-full flex items-center gap-4 select-none">
 					<Image
 						src="/pp.png"
 						alt="logo"
@@ -13,7 +13,7 @@ export const Header = () => {
 						height={54}
 						className="rounded-full"
 					/>
-					<div className="flex flex-col">
+					<div className="flex flex-col select-none">
 						<h1 className="font-mackinac text-xl font-bold text-text-color">
 							paul planchon
 						</h1>
@@ -22,7 +22,7 @@ export const Header = () => {
 						</h3>
 					</div>
 				</div>
-				<div className="flex md:flex-col pt-4 md:pt-0 flex-row md:w-fit w-full justify-between gap-2">
+				<div className="flex md:flex-col pt-4 md:pt-0 flex-row md:w-fit w-full justify-between gap-2 select-none">
 					<a
 						className="flex items-center justify-end gap-2 text-text-color"
 						href="https://github.com/planchon"

@@ -1,5 +1,6 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 export const ProjectBody = ({
 	children,
 	className,
@@ -17,13 +18,19 @@ export const ProjectHeader = ({
 	children,
 	className,
 	href,
-}: React.ComponentProps<"h3"> & { href: string }) => {
+	tooltip,
+}: React.ComponentProps<"h3"> & { href: string; tooltip: string }) => {
 	return (
 		<a
 			href={href}
 			className={cn("flex items-center justify-between gap-2", className)}
 		>
-			{children}
+			<Tooltip>
+				<TooltipTrigger asChild>{children}</TooltipTrigger>
+				<TooltipContent>
+					<p>{tooltip}</p>
+				</TooltipContent>
+			</Tooltip>
 			<FaArrowRightLong className="text-text-color md:block hidden" />
 		</a>
 	);
