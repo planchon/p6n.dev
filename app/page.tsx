@@ -130,8 +130,10 @@ export default async function Home() {
 						</h2>
 						<HorizontalLine className="relative" />
 						<div className="p-4">
-							<div className="flex items-center justify-between gap-2">
-								<Wizz className="inline-block h-[13px] w-auto mb-1 fill-text-color" />
+							<div className="flex items-center gap-2 mb-1 text-text-color">
+								<Wizz className="inline-block h-[13px] w-auto fill-text-color" />
+								<span className="text-[15px] leading-none">@</span>
+								<Voodoo className="inline-block h-[13px] w-auto fill-text-color" />
 							</div>
 							<ProjectBody>
 								<ProjectHeader>
