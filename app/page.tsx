@@ -15,6 +15,7 @@ import {
 } from "@/components/project";
 import Dither from "@/components/shaders/wave";
 import { Stratumn } from "@/components/stratumn";
+import { Voodoo } from "@/components/voodoo";
 import { Wizz } from "@/components/wizz";
 import { Beaubon } from "@/components/beaubon";
 import {
@@ -70,7 +71,7 @@ export default async function Home() {
 								</a>{" "}
 								at{" "}
 								<a href="https://voodoo.io" className="hover:underline">
-									Voodoo
+									<Voodoo className="inline-block h-[12px] w-auto mb-[3px] fill-text-color" />
 								</a>{" "}
 								on{" "}
 								<a href="https://wizzapp.com" className="hover:underline">
