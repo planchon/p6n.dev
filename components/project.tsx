@@ -25,7 +25,10 @@ export const ProjectHeader = ({
 	className,
 	href,
 	tooltip,
-}: React.ComponentProps<"h3"> & { href: string; tooltip: string }) => {
+}: React.ComponentProps<"h3"> & { href?: string; tooltip?: string }) => {
+	if (!href) {
+		return <div className={cn("flex items-center", className)}>{children}</div>;
+	}
 	return (
 		<a
 			href={href}

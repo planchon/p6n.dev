@@ -2,15 +2,9 @@ import { GiWaveSurfer } from "react-icons/gi";
 import { Biarritz } from "@/components/biarritz";
 import { Blog, BlogTitle } from "@/components/blog";
 import { Brume } from "@/components/brume";
-import { Clickhouse } from "@/components/clickhouse";
-import { Convex } from "@/components/convex";
 import { Glenans } from "@/components/glenans";
-import { Go } from "@/components/go";
 import { HorizontalLine } from "@/components/h-line";
 import { Header } from "@/components/header";
-import { Karnet } from "@/components/karnet";
-import { Next } from "@/components/next";
-import { OpenRouter } from "@/components/open-router";
 import { Paris } from "@/components/paris";
 import {
 	ProjectBody,
@@ -21,13 +15,23 @@ import {
 } from "@/components/project";
 import Dither from "@/components/shaders/wave";
 import { Stratumn } from "@/components/stratumn";
+import { Wizz } from "@/components/wizz";
+import { Beaubon } from "@/components/beaubon";
+import {
+	SiDuckdb,
+	SiExpo,
+	SiGooglecloud,
+	SiMongodb,
+	SiReact,
+	SiRedis,
+	SiRust,
+} from "react-icons/si";
 import { Docker } from "@/components/tech/docker";
 import { Gitlab } from "@/components/tech/gitlab";
 import { Helm } from "@/components/tech/helm";
 import { Node } from "@/components/tech/node";
 import { Postgraphile } from "@/components/tech/postgraphile";
 import { Postgres } from "@/components/tech/postgres";
-import { Temporal } from "@/components/temporal";
 import { VirtualLine } from "@/components/v-line";
 import { getDatabase } from "@/lib/database";
 
@@ -64,13 +68,26 @@ export default async function Home() {
 									<Paris className="inline-block w-5 h-5 mr-1 mb-1 fill-text-color" />
 									Paris
 								</a>{" "}
+								at{" "}
+								<a href="https://voodoo.io" className="hover:underline">
+									Voodoo
+								</a>{" "}
 								on{" "}
+								<a href="https://wizzapp.com" className="hover:underline">
+									<Wizz className="inline-block h-[11px] w-auto mb-[3px] fill-text-color" />
+								</a>
+								, a dating app. i'm a backend & infra engineer : we run a B2C
+								app at very large scale, with 500k daily active users and 5M
+								monthly active users, mostly on MongoDB and Cloud Run.
+							</p>
+							<p className="pt-2 text-text-color">
+								before that, i worked on{" "}
 								<a href="https://stratumn.com" className="hover:underline">
 									<Stratumn className="inline-block h-[15px] w-auto mb-1 fill-text-color" />
 								</a>{" "}
-								at <a href="https://sia-partners.com">Sia Partners</a>. I lead
-								the engineering team : we optimize the million LOC codebase,
-								improve the CICD, and maintain all our k8s clusters on AWS.
+								at <a href="https://sia-partners.com">Sia Partners</a>. I led the
+								engineering team : we optimized the million LOC codebase,
+								improved the CICD, and maintained all our k8s clusters on AWS.
 							</p>
 							<p className="pt-2 text-text-color">
 								i love going hardcore on subjects, obsessing over details and
@@ -113,6 +130,39 @@ export default async function Home() {
 						<HorizontalLine className="relative" />
 						<div className="p-4">
 							<div className="flex items-center justify-between gap-2">
+								<Wizz className="inline-block h-[13px] w-auto mb-1 fill-text-color" />
+							</div>
+							<ProjectBody>
+								<ProjectHeader>
+									<ProjectHeaderText>
+										Backend & infra of a 5M MAU dating app
+									</ProjectHeaderText>
+								</ProjectHeader>
+								<ProjectDescription>
+									We build a dating app, and I work on user-facing features from
+									the backend side. The app serves 500k DAU and 5M MAU on 7
+									MongoDB clusters, around ten Redis databases and 60
+									microservices on Cloud Run.
+								</ProjectDescription>
+								<ProjectTechStack>
+									<SiMongodb
+										title="MongoDB"
+										color="#47A248"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+									<SiRedis
+										title="Redis"
+										color="#FF4438"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+									<SiGooglecloud
+										title="Cloud Run"
+										color="#4285F4"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+								</ProjectTechStack>
+							</ProjectBody>
+							<div className="flex items-center justify-between gap-2 pt-6">
 								<Stratumn className="inline-block h-[15px] w-auto mb-1 fill-text-color" />
 							</div>
 							<ProjectBody>
@@ -145,13 +195,8 @@ export default async function Home() {
 								</ProjectTechStack>
 							</ProjectBody>
 							<ProjectBody className="pt-4">
-								<ProjectHeader
-									href="https://stratumn.com"
-									tooltip="Read my blog post about it"
-								>
-									<ProjectHeaderText>
-										Reduce CI/CD time by 80%
-									</ProjectHeaderText>
+								<ProjectHeader>
+									<ProjectHeaderText>Reduce CI/CD time by 80%</ProjectHeaderText>
 								</ProjectHeader>
 								<ProjectDescription>
 									Change our git strategy from single repository per project to
@@ -192,49 +237,36 @@ export default async function Home() {
 									experience, but on your own infrastructure.
 								</ProjectDescription>
 								<ProjectTechStack>
-									<Go
-										title="Go"
-										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									<SiRust
+										title="Rust"
+										className="inline-block w-6 h-6 m-1 text-text-color opacity-50 hover:opacity-100"
 									/>
-									<Temporal
-										title="Temporal"
-										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
-									/>
-									<Clickhouse
-										title="Clickhouse"
-										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									<SiDuckdb
+										title="DuckDB"
+										className="inline-block w-6 h-6 m-1 text-text-color opacity-50 hover:opacity-100"
 									/>
 								</ProjectTechStack>
 							</ProjectBody>
 							<div className="flex items-center justify-between gap-2 pt-6">
-								<Karnet className="inline-block h-[17px] w-auto fill-text-color" />
+								<Beaubon />
 							</div>
 							<ProjectBody className="pt-3">
-								<ProjectHeader
-									href="https://github.com/planchon/karnet"
-									tooltip="Go to the repository"
-								>
-									<ProjectHeaderText>
-										Superfast, multi-model/modal LLM chat
-									</ProjectHeaderText>
+								<ProjectHeader>
+									<ProjectHeaderText>Parisian food guide app</ProjectHeaderText>
 								</ProjectHeader>
-								<ProjectDescription className="mb-1">
-									I was tired of the shitty UI/UX of the major LLM providers. I
-									was missing a great keyboard only chat, fast and smooth ui. So
-									I built my own using Convex, Next.js and OpenRouter.
+								<ProjectDescription>
+									Guide Beaubon is a Parisian food guide, built as a mobile app
+									with Expo. Above all, it's an experiment to understand growth.
 								</ProjectDescription>
 								<ProjectTechStack>
-									<Convex
-										title="Convex"
-										className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0"
+									<SiExpo
+										title="Expo"
+										className="inline-block w-6 h-6 m-1 text-text-color opacity-50 hover:opacity-100"
 									/>
-									<OpenRouter
-										title="OpenRouter"
-										className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0"
-									/>
-									<Next
-										title="Next"
-										className="inline-block w-5 h-5 m-1 grayscale hover:grayscale-0"
+									<SiReact
+										title="React Native"
+										color="#61DAFB"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
 									/>
 								</ProjectTechStack>
 							</ProjectBody>
