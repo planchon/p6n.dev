@@ -19,7 +19,9 @@ import { Stratumn } from "@/components/stratumn";
 import { Voodoo } from "@/components/voodoo";
 import { Wizz } from "@/components/wizz";
 import { Beaubon } from "@/components/beaubon";
+import { Dax } from "@/components/dax";
 import {
+	SiBun,
 	SiDuckdb,
 	SiExpo,
 	SiGooglecloud,
@@ -27,6 +29,7 @@ import {
 	SiReact,
 	SiRedis,
 	SiRust,
+	SiTrpc,
 } from "react-icons/si";
 import { Docker } from "@/components/tech/docker";
 import { Gitlab } from "@/components/tech/gitlab";
@@ -198,9 +201,13 @@ export default async function Home() {
 						<HorizontalLine className="relative" />
 						<section aria-labelledby="projects" className="p-4">
 							<div className="flex items-center gap-2 mb-1 text-text-color">
-								<Wizz className="inline-block h-[13px] w-auto fill-text-color" />
+								<a href="https://wizzapp.com" className="flex">
+									<Wizz className="inline-block h-[13px] w-auto fill-text-color" />
+								</a>
 								<span className="text-[15px] leading-none">@</span>
-								<Voodoo className="inline-block h-[13px] w-auto fill-text-color" />
+								<a href="https://voodoo.io" className="flex">
+									<Voodoo className="inline-block h-[13px] w-auto fill-text-color" />
+								</a>
 							</div>
 							<ProjectBody>
 								<ProjectHeader>
@@ -233,7 +240,9 @@ export default async function Home() {
 								</ProjectTechStack>
 							</ProjectBody>
 							<div className="flex items-center justify-between gap-2 pt-6">
-								<Stratumn className="inline-block h-[15px] w-auto mb-1 fill-text-color" />
+								<a href="https://stratumn.com" className="flex">
+									<Stratumn className="inline-block h-[15px] w-auto mb-1 fill-text-color" />
+								</a>
 							</div>
 							<ProjectBody>
 								<ProjectHeader
@@ -289,7 +298,9 @@ export default async function Home() {
 								</ProjectTechStack>
 							</ProjectBody>
 							<div className="flex items-center justify-between gap-2 pt-6">
-								<Brume />
+								<a href="https://brume.dev" className="hover:underline">
+									<Brume />
+								</a>
 							</div>
 							<ProjectBody className="pt-3">
 								<ProjectHeader
@@ -318,7 +329,9 @@ export default async function Home() {
 								</ProjectTechStack>
 							</ProjectBody>
 							<div className="flex items-center justify-between gap-2 pt-6">
-								<Beaubon />
+								<a href="https://beaubon.guide" className="hover:underline">
+									<Beaubon />
+								</a>
 							</div>
 							<ProjectBody className="pt-3">
 								<ProjectHeader>
@@ -337,6 +350,43 @@ export default async function Home() {
 										title="React Native"
 										color="#61DAFB"
 										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+								</ProjectTechStack>
+							</ProjectBody>
+							<div className="flex items-center justify-between gap-2 pt-6">
+								<Dax />
+							</div>
+							<ProjectBody className="pt-3">
+								<ProjectHeader>
+									<ProjectHeaderText>
+										Personal coach app for long-term goals
+									</ProjectHeaderText>
+								</ProjectHeader>
+								<ProjectDescription>
+									Dax understands your long-term goals (lose weight, do more
+									sport, read more, start a business) and prepares custom
+									programs to help you reach them. It is also a social network
+									where everyone shares their wins and losses. Currently in
+									alpha.
+								</ProjectDescription>
+								<ProjectTechStack>
+									<SiExpo
+										title="Expo"
+										className="inline-block w-6 h-6 m-1 text-text-color opacity-50 hover:opacity-100"
+									/>
+									<SiTrpc
+										title="tRPC"
+										color="#2596BE"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+									<SiMongodb
+										title="MongoDB"
+										color="#47A248"
+										className="inline-block w-6 h-6 m-1 grayscale hover:grayscale-0"
+									/>
+									<SiBun
+										title="Bun"
+										className="inline-block w-6 h-6 m-1 text-text-color opacity-50 hover:opacity-100"
 									/>
 								</ProjectTechStack>
 							</ProjectBody>
