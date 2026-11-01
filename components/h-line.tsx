@@ -9,6 +9,7 @@ export const HorizontalLine = ({
 }) => {
 	return (
 		<svg
+			aria-hidden="true"
 			className={cn(
 				className,
 				"pointer-events-none z-10 text-[#CBCBCB] w-full",
@@ -21,7 +22,6 @@ export const HorizontalLine = ({
 			preserveAspectRatio="none"
 			style={{ left: "50%", transform: "translateX(-50%)", width: "100vw" }}
 		>
-			<title>Horizontal Line</title>
 			<line
 				x1="0"
 				y1="0.5"

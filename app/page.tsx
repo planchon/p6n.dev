@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { GiWaveSurfer } from "react-icons/gi";
 import { Biarritz } from "@/components/biarritz";
 import { Blog, BlogTitle } from "@/components/blog";
@@ -34,24 +35,87 @@ import { Node } from "@/components/tech/node";
 import { Postgraphile } from "@/components/tech/postgraphile";
 import { Postgres } from "@/components/tech/postgres";
 import { VirtualLine } from "@/components/v-line";
-import { getDatabase } from "@/lib/database";
+import { getBlogPosts } from "@/lib/blog";
+import { baseOpenGraph, SITE_URL, site } from "@/lib/site";
+
+// Re-render at most once an hour so new blog posts show up without a deploy.
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+	alternates: { canonical: "/" },
+	openGraph: { ...baseOpenGraph, url: "/" },
+};
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": `${SITE_URL}/#website`,
+			url: SITE_URL,
+			name: site.handle,
+			alternateName: [site.name, "p6n.dev"],
+			inLanguage: "en",
+			publisher: { "@id": `${SITE_URL}/#person` },
+		},
+		{
+			"@type": "ProfilePage",
+			"@id": `${SITE_URL}/#profilepage`,
+			url: SITE_URL,
+			name: site.title,
+			description: site.description,
+			inLanguage: "en",
+			isPartOf: { "@id": `${SITE_URL}/#website` },
+			mainEntity: { "@id": `${SITE_URL}/#person` },
+		},
+		{
+			"@type": "Person",
+			"@id": `${SITE_URL}/#person`,
+			name: site.name,
+			alternateName: site.handle,
+			url: SITE_URL,
+			image: `${SITE_URL}${site.image}`,
+			jobTitle: site.jobTitle,
+			description: site.description,
+			worksFor: {
+				"@type": "Organization",
+				name: site.employer.name,
+				url: site.employer.url,
+			},
+			homeLocation: { "@type": "Place", name: site.location },
+			knowsAbout: site.knowsAbout,
+			sameAs: [
+				site.links.github,
+				site.links.twitter,
+				site.links.x,
+				site.links.blog,
+			],
+		},
+	],
+};
 
 export default async function Home() {
-	const database = await getDatabase("eec54a10-b843-4a1a-8baa-cb42fe2b474e");
+	const posts = await getBlogPosts();
 	return (
 		<div>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+				}}
+			/>
 			<div className="fixed top-0 left-0 h-[50px] md:h-[10px] z-50 pointer-events-none blur-gradient-top" />
 			<div className="w-full min-h-screen relative overflow-x-hidden">
 				<div className="inset-0 absolute max-w-[650px] mx-auto max-[690px]:mx-4 pointer-events-none">
 					<VirtualLine direction="left" />
 					<VirtualLine direction="right" />
 				</div>
-				<div className="max-w-[650px] mx-auto w-full max-[690px]:px-4 md:py-[150px] py-[25px] relative">
+				<main className="max-w-[650px] mx-auto w-full max-[690px]:px-4 md:py-[150px] py-[25px] relative">
 					<div className="relative">
 						<HorizontalLine direction="top" />
 						<Header />
 						<HorizontalLine className="relative" />
-						<div className="px-4 pt-4">
+						<section aria-label="About" className="px-4 pt-4">
 							<p className="text-text-color">
 								hello i'm paul, a software engineer from{" "}
 								<a
@@ -111,7 +175,7 @@ export default async function Home() {
 							<p className="pt-2 text-text-color">
 								two things i buy too much and never use: books and domain names.
 							</p>
-						</div>
+						</section>
 						<Dither
 							waveSpeed={0.05}
 							waveFrequency={3}
@@ -125,11 +189,14 @@ export default async function Home() {
 							className="h-full w-full p-4"
 						/>
 						<HorizontalLine className="relative" />
-						<h2 className="w-full py-2 px-4 font-mackinac text-lg text-text-color select-none">
+						<h2
+							id="projects"
+							className="w-full py-2 px-4 font-mackinac text-lg text-text-color select-none"
+						>
 							Projects
 						</h2>
 						<HorizontalLine className="relative" />
-						<div className="p-4">
+						<section aria-labelledby="projects" className="p-4">
 							<div className="flex items-center gap-2 mb-1 text-text-color">
 								<Wizz className="inline-block h-[13px] w-auto fill-text-color" />
 								<span className="text-[15px] leading-none">@</span>
@@ -273,29 +340,28 @@ export default async function Home() {
 									/>
 								</ProjectTechStack>
 							</ProjectBody>
-						</div>
+						</section>
 						<HorizontalLine className="relative" />
-						<h2 className="w-full py-2 px-4 font-mackinac text-lg text-text-color select-none">
+						<h2
+							id="blog"
+							className="w-full py-2 px-4 font-mackinac text-lg text-text-color select-none"
+						>
 							Blog
 						</h2>
 						<HorizontalLine className="relative" />
-						<div className="flex flex-col gap-4 p-4">
-							{database.map(async (post) => (
+						<section aria-labelledby="blog" className="flex flex-col gap-4 p-4">
+							{posts.map((post) => (
 								<Blog
-									// @ts-expect-error
-									href={`https://blog.p6n.dev/p/${post.properties.Slug.rich_text[0].plain_text}`}
+									href={post.url}
 									key={post.id}
 									className="flex flex-row items-center justify-between gap-2"
 								>
-									<BlogTitle>
-										{/* @ts-ignore */}
-										{post.properties.Page.title[0].plain_text}
-									</BlogTitle>
+									<BlogTitle>{post.title}</BlogTitle>
 								</Blog>
 							))}
-						</div>
+						</section>
 					</div>
-				</div>
+				</main>
 			</div>
 			<div className="fixed bottom-0 left-0 h-[50px] z-50 pointer-events-none blur-gradient-bottom" />
 		</div>

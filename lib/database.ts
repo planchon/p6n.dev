@@ -20,6 +20,7 @@ export const getDatabase = async (databaseId: string) => {
 	do {
 		const response = await notion.dataSources.query({
 			data_source_id: databaseId,
+			start_cursor: startCursor,
 		});
 
 		results.push(...(response.results as PageObjectResponse[]));

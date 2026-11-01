@@ -3,6 +3,7 @@ import { cn } from "@/utils/cn";
 export const VirtualLine = ({ direction }: { direction: "left" | "right" }) => {
 	return (
 		<svg
+			aria-hidden="true"
 			className={cn(
 				"absolute pointer-events-none z-10 text-[#CBCBCB]",
 				direction === "left" ? "left-0" : "right-0",
@@ -14,7 +15,6 @@ export const VirtualLine = ({ direction }: { direction: "left" | "right" }) => {
 			preserveAspectRatio="none"
 			style={{ width: "1px" }}
 		>
-			<title>Virtual Line</title>
 			<line
 				x1="0.5"
 				y1="0"

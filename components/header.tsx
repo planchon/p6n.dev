@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { FaGithub, FaTwitter } from "react-icons/fa";
+import { site } from "@/lib/site";
 
 export const Header = () => {
 	return (
-		<div className="relative">
+		<header className="relative">
 			<div className="flex md:flex-row flex-col items-center p-4 justify-between">
 				<div className="w-full flex items-center gap-4 select-none">
 					<Image
 						src="/pp.png"
-						alt="logo"
+						alt="Paul Planchon"
 						width={54}
 						height={54}
 						className="rounded-full"
@@ -17,28 +18,30 @@ export const Header = () => {
 						<h1 className="font-mackinac text-xl font-bold text-text-color">
 							paul planchon
 						</h1>
-						<h3 className="font-fragment-mono text-xs font-medium text-text-color">
+						<p className="font-fragment-mono text-xs font-medium text-text-color">
 							product minded engineer
-						</h3>
+						</p>
 					</div>
 				</div>
 				<div className="flex md:flex-col pt-4 md:pt-0 flex-row md:w-fit w-full justify-between gap-2 select-none">
 					<a
 						className="flex items-center justify-end gap-2 text-text-color"
-						href="https://github.com/planchon"
+						href={site.links.github}
+						rel="me"
 					>
 						<FaGithub className="text-text-color" />
 						github
 					</a>
 					<a
 						className="flex items-center justify-end gap-2 text-text-color"
-						href="https://twitter.com/pplanchon_"
+						href={site.links.twitter}
+						rel="me"
 					>
 						<FaTwitter className="text-text-color" />
 						twitter
 					</a>
 				</div>
 			</div>
-		</div>
+		</header>
 	);
 };
