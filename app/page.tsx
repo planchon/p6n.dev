@@ -365,9 +365,7 @@ export default async function Home() {
 								<ProjectDescription>
 									Dax understands your long-term goals (lose weight, do more
 									sport, read more, start a business) and prepares custom
-									programs to help you reach them. It is also a social network
-									where everyone shares their wins and losses. Currently in
-									alpha.
+									programs to help you reach them. Currently in alpha.
 								</ProjectDescription>
 								<ProjectTechStack>
 									<SiExpo
