@@ -21,6 +21,8 @@ export const getDatabase = async (databaseId: string) => {
 		const response = await notion.dataSources.query({
 			data_source_id: databaseId,
 			start_cursor: startCursor,
+			// Newest posts first.
+			sorts: [{ property: "Date", direction: "descending" }],
 		});
 
 		results.push(...(response.results as PageObjectResponse[]));
